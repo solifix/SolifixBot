@@ -29,7 +29,22 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         reply_text = f'Привіт {update.effective_user.first_name}'
     else:
         reply_text = 'Я тебе не розумію.'
+
+
+
+async def hello(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    message = update.message.text.lower()
+
+    if 'привіт' in message:
+        reply_text = f'Привіт {update.effective_user.first_name}'
+    else:
+        reply_text = 'допобачення.'
+
     await update.message.reply_text(reply_text)
+
+
+
+
 
 
 
